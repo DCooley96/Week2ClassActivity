@@ -1,0 +1,31 @@
+---
+title: "W2 Class Activity Analysis Code"
+author: "Daiszha Cooley"
+date: "2022-09-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#install packages and libraries 
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+#Import data from github
+```{r}
+Diabetes<-read_csv("https://raw.githubusercontent.com/DCooley96/Week2ClassActivity/main/DiabetesAtlasData.csv")
+
+colnames(Diabetes)
+
+DiabetesHigh<-Diabetes %>%
+  slice_max('Diagnosed Diabetes Percentage')
+
+Print(Diabetes)
+
+max(Diabetes$'Diagnosed Diabetes Percentage', na.rm=TRUE)
+```
+
+
